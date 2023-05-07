@@ -15,7 +15,7 @@
   border-bottom: 1px solid #b50202;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #1555aa;
   font-size: 100;
 }
 
@@ -32,7 +32,7 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #1555aa;
 }
 .content {
   max-width: 600px;
@@ -51,7 +51,7 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #1555aa;
   margin-bottom: 8px;
 }
 
@@ -61,7 +61,7 @@
 
 .blog-details h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #1555aa;
   margin-bottom: 10px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .blog-details button {
-  background: #f1356d;
+  background: #1555aa;
   color: #fff;
   border: 0;
   padding: 8px;
@@ -90,7 +90,7 @@
 }
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #1555aa;
   margin-bottom: 30px;
 }
 .create input, .create textarea, .create select {
@@ -102,10 +102,45 @@
   display: block;
 }
 .create button {
-  background: #f1356d;
+  background:#1555aa;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.content label {
+  text-align: left;
+  display: block;
+}
+.content h2 {
+  font-size: 20px;
+  color: #1555aa;
+  margin-bottom: 30px;
+}
+.content input, .create textarea, .create select {
+  width: 50%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.content button {
+  background: #1555aa;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content textarea {
+  width: 80%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
 }
