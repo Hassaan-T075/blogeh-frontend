@@ -1,28 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import userdata from '../../constants/Constants'
 
-const Register = () => {
+const Login = () => {
 
-    const [name, setName] = useState('');
+    const [username, setName] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault() //prevents poge from refreshing
-        const blog = { name, password }
+        const blog = { username, password }
 
         setIsLoading(true)
 
         //make post request here
-        fetch('http://localhost:3000/blogs/', {
+        fetch('https://blogeh.herokuapp.com/api/auth/login', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                'Access-Control-Request-Method': 'POST'
+            },
             body: JSON.stringify(blog) // 'stringify' converts 'blog object' into 'json string'
-        }).then(() => {
-            console.log('new blog added');
+        }).then((response) => response.json())
+        .then((data) => {
+            userdata.token = data.token
+            console.log(userdata.token)
+            console.log('logged in');
             setIsLoading(false);
             navigate('/');
+        }).catch((err) => {
+            console.log(err.message)
         })
 
     }
@@ -36,7 +45,7 @@ const Register = () => {
                 <input
                     type="text"
                     required
-                    value={name}
+                    value={username}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <label>Password:</label>
@@ -53,4 +62,4 @@ const Register = () => {
     );
 }
 
-export default Register;
+export default Login;
