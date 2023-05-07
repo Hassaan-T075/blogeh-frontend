@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthNavbar from "./AuthNavbar";
 
 const Register = () => {
 
@@ -35,7 +36,9 @@ const Register = () => {
     }
 
     return (
-        <div className="create">
+        <div className="content">
+            <AuthNavbar/>
+            <br/>
             <form
                 onSubmit={handleSubmit}
             > {/*clicking on 'add' button fires a submit event, we can listen to that submit event in form and react to it*/}
