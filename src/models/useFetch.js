@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import userdata from '../constants/Constants'
 
 const useFetch = (url) => {
     const [data, setData] = useState(null)
@@ -7,14 +8,18 @@ const useFetch = (url) => {
 
     useEffect(() => {
         const abortCont = new AbortController();
+        //console.log(userdata.token)
+        const token = userdata.token
 
-        fetch(url, { signal: abortCont.signal })
-            .then(res => {
-                if (!res.ok) {
-                    throw Error('could not fetch data')
-                }
-                return res.json(); //.json() parses the res json object into javascript object 
-            })
+        fetch(url, {
+            signal: abortCont.signal,
+            headers: { 'Authorization': `Bearer ${token}` }
+        }).then(res => {
+            if (!res.ok) {
+                throw Error('could not fetch data')
+            }
+            return res.json(); //.json() parses the res json object into javascript object 
+        })
             .then(data => {
                 setIsPending(false)
                 console.log(data)
