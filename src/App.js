@@ -4,7 +4,7 @@ import Login from './screens/auth/Login';
 import AuthNavbar from './screens/auth/AuthNavbar';
 import UserNavbar from './screens/home/UserNavbar';
 import Homepage from './screens/home/Homepage';
-import Profile from './screens/profile/Profile';
+import MyProfile from './screens/profile/MyProfile';
 import BlogDetails from './screens/home/BlogDetails';
 import userdata from './constants/Constants'
 import MyBlogs from './screens/home/MyBlogs';
@@ -24,7 +24,7 @@ function App() {
             <Route path="/blogs/:id" element={<BlogDetails />}></Route>
             <Route path="/myblogs/:id" element={<MyBlogDetails />}></Route>
             <Route exact path="/create" element={<Create />}></Route>
-            <Route exact path="/profile" element={<Profile />}></Route>
+            <Route exact path="/profile" element={<MyProfile />}></Route>
             <Route exact path="/favorites" element={<MyBlogs />}></Route>
           </Routes>
         </div>

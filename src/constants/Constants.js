@@ -1,5 +1,7 @@
 const userdata = {
-    token: ''
+    token: '',
+    username : '',
+    password : ''
 }
 
 export default userdata;

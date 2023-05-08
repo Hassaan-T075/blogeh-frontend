@@ -27,6 +27,8 @@ const Login = () => {
         }).then((response) => response.json())
         .then((data) => {
             userdata.token = data.token
+            userdata.username = username
+            userdata.password = password
             console.log(userdata.token)
             console.log('logged in');
             setIsLoading(false);
