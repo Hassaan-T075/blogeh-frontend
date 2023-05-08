@@ -10,6 +10,7 @@ import userdata from './constants/Constants'
 import MyBlogs from './screens/home/MyBlogs';
 import MyBlogDetails from './screens/home/MyBlogDetails';
 import Create from './screens/home/Create';
+import UserProfile from './screens/profile/UserProfile';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/home" element={<Homepage />}></Route>
             <Route path="/blogs/:id" element={<BlogDetails />}></Route>
             <Route path="/myblogs/:id" element={<MyBlogDetails />}></Route>
+            <Route path="/profile/:user" element={<UserProfile />}></Route>
             <Route exact path="/create" element={<Create />}></Route>
             <Route exact path="/profile" element={<MyProfile />}></Route>
             <Route exact path="/favorites" element={<MyBlogs />}></Route>

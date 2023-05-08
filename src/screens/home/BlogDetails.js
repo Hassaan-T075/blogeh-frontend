@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../models/useFetch";
 import userdata from '../../constants/Constants'
 import UserNavbar from "./UserNavbar";
@@ -31,7 +31,7 @@ const BlogDetails = () => {
             {blog && (//template containing information about blog is returned
                 <article>
                     <h2>{blog.blog.title}</h2>
-                    <p>Written by {blog.blog.username}</p>
+                    <p>Written by <Link to={`/profile/${blog.blog.username}`}>{blog.blog.username}</Link></p>
                     <div>{blog.blog.body}</div>
                     {/* <button onClick={handleClick}>delete</button> */}
                 </article>
