@@ -8,7 +8,7 @@ const BlogDetails = () => {
 
     const { id } = useParams()
     const { data: blog, error, isPending } =
-        useFetch('https://blogeh.herokuapp.com/api/home/blogs/' + id);
+        useFetch('http://localhost:3000/api/home/blogs/' + id);
     //useFetch is used to get custom data of the particular blog
 
     // const navigate = useNavigate()

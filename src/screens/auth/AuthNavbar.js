@@ -5,7 +5,7 @@ const AuthNavbar = () => {
         <nav className="navbar">
             <h1> Blogeh <p>Curate your thoughts</p></h1>
             <div className="links">
-                <Link to="/login">Login</Link>
+                <Link to="/">Login</Link>
                 <Link to="/register">Register</Link>
             </div>
         </nav>

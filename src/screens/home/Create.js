@@ -14,23 +14,25 @@ const Create = () => {
         const blog = { title, body }
 
         setIsLoading(true)
+        console.log(blog)
 
         //make post request here
-        fetch('https://blogeh.herokuapp.com/api/home/new-blog', {
+        fetch('http://localhost:3000/api/home/new-blog', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
                 headers: { 'Authorization': `Bearer ${userdata.token}` }
             },
             body: JSON.stringify(blog) // 'stringify' converts 'blog object' into 'json string'
-        }).then(() => {
-            console.log(userdata.token);
-            console.log('new blog added');
-            setIsLoading(false);
-            //navigate(-1) //goes on step back
-            navigate('/');
-        })
-
+        }).then((data) => {
+                console.log(userdata.token);
+                console.log('new blog added');
+                setIsLoading(false);
+                //navigate(-1) //goes on step back
+                navigate('/home');
+            }).catch((err) => {
+                console.log(err.message)
+            })
     }
 
     return (

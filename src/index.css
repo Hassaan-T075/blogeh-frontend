@@ -12,7 +12,7 @@
   align-items: center; /*vertically center not horizontally*/
   max-width: 600px;
   margin: 0 auto;
-  border-bottom: 1px solid #b50202;
+  border-bottom: 1px solid #2d2094;
 }
 .navbar h1 {
   color: #1555aa;

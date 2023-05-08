@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthNavbar from "./AuthNavbar";
 
-const Register = () => {
+const Profile = () => {
 
     const [email, setEmail] = useState('');
     const [username, setName] = useState('');
@@ -28,7 +27,7 @@ const Register = () => {
             .then((data) => {
                 console.log('new user added');
                 setIsLoading(false);
-                navigate('/');
+                navigate('/register');
             }).catch((err) => {
                 console.log(err.message)
             })
@@ -36,9 +35,7 @@ const Register = () => {
     }
 
     return (
-        <div className="content">
-            <AuthNavbar/>
-            <br/>
+        <div className="create">
             <form
                 onSubmit={handleSubmit}
             > {/*clicking on 'add' button fires a submit event, we can listen to that submit event in form and react to it*/}
@@ -70,4 +67,4 @@ const Register = () => {
     );
 }
 
-export default Register;
+export default Profile;

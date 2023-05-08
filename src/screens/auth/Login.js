@@ -17,7 +17,7 @@ const Login = () => {
         setIsLoading(true)
 
         //make post request here
-        fetch('https://blogeh.herokuapp.com/api/auth/login', {
+        fetch('http://localhost:3000/api/auth/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
@@ -30,7 +30,7 @@ const Login = () => {
             console.log(userdata.token)
             console.log('logged in');
             setIsLoading(false);
-            navigate('/');
+            navigate('/home');
         }).catch((err) => {
             console.log(err.message)
         })
