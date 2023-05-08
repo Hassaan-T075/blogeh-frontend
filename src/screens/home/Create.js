@@ -21,7 +21,7 @@ const Create = () => {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-                headers: { 'Authorization': `Bearer ${userdata.token}` }
+                'Authorization': `Bearer ${userdata.token}`
             },
             body: JSON.stringify(blog) // 'stringify' converts 'blog object' into 'json string'
         }).then((data) => {
