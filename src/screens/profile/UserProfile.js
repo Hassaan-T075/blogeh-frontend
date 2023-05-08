@@ -28,7 +28,6 @@ const UserProfile = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("profile sent");
         setEmail(data.email);
         setName(data.username);
 
@@ -39,10 +38,32 @@ const UserProfile = () => {
         console.log(err.message);
       });
   }, []);
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    const update = { follow: name };
+
+    fetch("http://localhost:3000/api/home/profile/follow", {
+      method: "POST",
+
+      headers: {
+        Authorization: `Bearer ${userdata.token}`,
+        "Content-Type": "application/json",
+        "Access-Control-Request-Method": "POST",
+      },
+      body: JSON.stringify(update),
+    })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="create">
-         <h2>User Profile</h2>
+      <h2>User Profile</h2>
       <label>Email:</label>
       <input type="text" value={email} />
       <label>Username:</label>
@@ -52,6 +73,8 @@ const UserProfile = () => {
       <input type="text" value={followings} />
       <label>Blog Count:</label>
       <input type="text" value={blogsCount} />
+      <button onClick={handleClick}>Follow</button>
+
       <br />
     </div>
   );
