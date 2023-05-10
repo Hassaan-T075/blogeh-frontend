@@ -8,6 +8,7 @@ const Register = () => {
     const [username, setName] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -24,12 +25,23 @@ const Register = () => {
                 'Access-Control-Request-Method': 'POST'
             },
             body: JSON.stringify(user) // 'stringify' converts 'blog object' into 'json string'
-        }).then((response) => response.json())
-            .then((data) => {
-                console.log('new user added');
+        }).then((response) => {            
                 setIsLoading(false);
-                navigate('/');
+                if(response.status == 200)
+                {
+                    navigate('/');
+                }
+                else if(response.status==409)
+                {
+                    setError("User Already Exists");
+                }
+                else 
+                {
+                    setError("Error Occured, Please Register Again")
+                }
+               
             }).catch((err) => {
+                setError(err.message);
                 console.log(err.message)
             })
 
@@ -63,6 +75,7 @@ const Register = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+                <label>{error}</label>
                 {!isLoading && <button>Register</button>}
                 {isLoading && <button disabled>Registering</button>}
             </form>

@@ -9,6 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault() //prevents poge from refreshing
@@ -29,10 +30,21 @@ const Login = () => {
             userdata.token = data.token
             userdata.username = username
             userdata.password = password
-            console.log(userdata.token)
-            console.log('logged in');
             setIsLoading(false);
-            navigate('/home');
+        if(data.msg == 'Success')
+        {
+                console.log("Logged In");
+                navigate('/home');
+               
+        }
+        else 
+        {
+            setError(data.msg);
+        }
+            console.log(userdata.token)
+            console.log('logged in');   
+            console.log(data);
+           
         }).catch((err) => {
             console.log(err.message)
         })
@@ -60,6 +72,7 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+                <label>{error}</label>
                 {!isLoading && <button>Login</button>}
                 {isLoading && <button disabled>Logging in</button>}
             </form>
