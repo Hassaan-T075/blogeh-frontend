@@ -64,7 +64,7 @@ const MyProfile = () => {
         <div>
              <UserNavbar/>
         <div className="create">
-           
+                <h2>My Profile</h2>
             <label>Email:</label>
             <input
                 type="text"

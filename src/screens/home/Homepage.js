@@ -7,13 +7,7 @@ import AuthNavbar from '../auth/AuthNavbar';
 import UserNavbar from './UserNavbar';
 
 const Homepage = () => {
-    
-    // const root = ReactDOM.createRoot(
-    //     document.getElementById('root')
-    //   );
-
     const {data : blogs, isPending, error} = useFetch('http://localhost:3000/api/home/blogs')
-    //this.setState({ state: this.state });
     return (
         <div className="home">
             <UserNavbar/>
@@ -22,8 +16,6 @@ const Homepage = () => {
             {isPending && <div>Loading...</div>}
             <br/>
             {blogs && <BlogList blogs={blogs} title="All Blogs" />}
-            {/* <MyComponent></MyComponent> */}
-            {/* {root.render()} */}
         </div>
     );
 }

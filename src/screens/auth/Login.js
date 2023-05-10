@@ -55,6 +55,7 @@ const Login = () => {
         <div className="content">
             <AuthNavbar/>
             <br/>
+            <h2>Login</h2>
             <form
                 onSubmit={handleSubmit}
             > {/*clicking on 'add' button fires a submit event, we can listen to that submit event in form and react to it*/}

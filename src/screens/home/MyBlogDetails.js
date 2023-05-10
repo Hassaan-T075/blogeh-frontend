@@ -6,27 +6,6 @@ import UserNavbar from "./UserNavbar";
 
 const MyBlogDetails = () => {
   const { id } = useParams();
-  // const { data: blog, error, isPending } =
-  //     useFetch('http://localhost:3000/api/home/blogs/' + id);
-  // //useFetch is used to get custom data of the particular blog
-
-  // return (
-  //     <div className="blog-details">
-  //         <UserNavbar/>
-  //         <br/>
-  //         {isPending && <div>Loading...</div>}
-  //         {error && <div>{error}</div>}
-  //         {blog && (//template containing information about blog is returned
-  //             <article>
-  //                 <h2>{blog.blog.title}</h2>
-  //                 <p>Written by {blog.blog.username}</p>
-  //                 <div>{blog.blog.body}</div>
-  //                 <button onClick={handleClick}>delete</button>
-  //             </article>
-  //         )}
-  //     </div>
-  // );
-
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [isLoading, setIsLoading] = useState(false);
