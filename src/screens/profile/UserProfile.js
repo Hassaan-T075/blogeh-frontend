@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userdata from "../../constants/Constants";
+import UserNavbar from '../home/UserNavbar';
 
 const UserProfile = () => {
   const [email, setEmail] = useState("");
@@ -63,6 +64,7 @@ const UserProfile = () => {
 
   return (
     <div className="create">
+      <UserNavbar/>
       <h2>User Profile</h2>
       <label>Email:</label>
       <input type="text" value={email} />

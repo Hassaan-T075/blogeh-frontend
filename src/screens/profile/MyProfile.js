@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userdata from "../../constants/Constants";
+import UserNavbar from '../home/UserNavbar';
 
 const MyProfile = () => {
 
@@ -61,6 +62,7 @@ const MyProfile = () => {
 
     return (
         <div className="create">
+            <UserNavbar/>
             <label>Email:</label>
             <input
                 type="text"

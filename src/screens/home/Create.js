@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userdata from "../../constants/Constants";
+import UserNavbar from './UserNavbar';
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -37,6 +38,7 @@ const Create = () => {
 
     return (
         <div className="content">
+              <UserNavbar/>
             <h2>Add a New Blog</h2>
             <form
                 onSubmit={handleSubmit}
