@@ -27,11 +27,11 @@ const Register = () => {
             body: JSON.stringify(user) // 'stringify' converts 'blog object' into 'json string'
         }).then((response) => {            
                 setIsLoading(false);
-                if(response.status == 200)
+                if(response.status === 200)
                 {
                     navigate('/');
                 }
-                else if(response.status==409)
+                else if(response.status === 409)
                 {
                     setError("User Already Exists");
                 }
@@ -71,7 +71,7 @@ const Register = () => {
                 />
                 <label>Password:</label>
                 <input
-                    type="text"
+                    type="password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

@@ -79,7 +79,7 @@ const MyProfile = () => {
             />
             <label>Password:</label>
             <input
-                type="text"
+                type="password"
                 required
                 value={password}
                 onChange={(e) => setPass(e.target.value)}

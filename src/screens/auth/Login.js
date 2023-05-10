@@ -31,7 +31,7 @@ const Login = () => {
             userdata.username = username
             userdata.password = password
             setIsLoading(false);
-        if(data.msg == 'Success')
+        if(data.msg === 'Success')
         {
                 console.log("Logged In");
                 navigate('/home');
@@ -68,7 +68,7 @@ const Login = () => {
                 />
                 <label>Password:</label>
                 <input
-                    type="text"
+                    type="password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
