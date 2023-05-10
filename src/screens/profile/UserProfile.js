@@ -11,6 +11,7 @@ const UserProfile = () => {
   const [password, setPass] = useState("");
   const [followings, setFollowings] = useState("");
   const [blogsCount, setBlogsCount] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const { user } = useParams();
 
@@ -63,8 +64,10 @@ const UserProfile = () => {
   };
 
   return (
+    <div>
+    <UserNavbar/>
     <div className="create">
-      <UserNavbar/>
+      
       <h2>User Profile</h2>
       <label>Email:</label>
       <input type="text" value={email} />
@@ -75,9 +78,11 @@ const UserProfile = () => {
       <input type="text" value={followings} />
       <label>Blog Count:</label>
       <input type="text" value={blogsCount} />
+      <label>{error}</label>
       <button onClick={handleClick}>Follow</button>
 
       <br />
+    </div>
     </div>
   );
 };

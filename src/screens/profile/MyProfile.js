@@ -61,8 +61,10 @@ const MyProfile = () => {
     }
 
     return (
+        <div>
+             <UserNavbar/>
         <div className="create">
-            <UserNavbar/>
+           
             <label>Email:</label>
             <input
                 type="text"
@@ -96,6 +98,7 @@ const MyProfile = () => {
             {!isLoading && <button onClick={onUpdate}>Update</button>}
             {isLoading && <button disabled>Updating...</button>}
 
+        </div>
         </div>
     );
 }
