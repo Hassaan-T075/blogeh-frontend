@@ -55,8 +55,9 @@ const UserProfile = () => {
       },
       body: JSON.stringify(update),
     })
-      .then((data) => {
-        console.log(data);
+    .then((response) => response.json()).then((data) => {
+       setError(data.msg);
+       console.log(data);
       })
       .catch((error) => {
         console.log(error);
